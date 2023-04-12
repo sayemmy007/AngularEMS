@@ -1,0 +1,16 @@
+<h1>Welcome</h1>
+<div class="container"> 
+    welcome {{name}}. You can manage your todos <a routerLink="/todo"> here</a>
+</div>
+<div class="container"> 
+    <button (click)="getWelcomeMsg()" class="btn btn-success">Get Welcome Msg</button>
+</div><br>
+
+<div class="container"> 
+    <button (click)="getWelcomeMsgWihParameter()" class="btn btn-success">Get Welcome Msg with paramter</button>
+</div>
+
+<div class="container" *ngIf="welcomeMsgFromService"> 
+    <h2>Your customize welcme msg</h2>
+    {{welcomeMsgFromService}}
+</div>

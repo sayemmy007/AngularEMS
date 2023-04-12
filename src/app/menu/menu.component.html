@@ -1,0 +1,16 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div><a href="http://www.google.com"class="navbar-brand">Imran Sayyed</a></div>
+        <ul class="navbar-nav">
+           <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/welcome/imran" class="nav-link">Home</a></li>
+           <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/create-employee" class="nav-link">Add Employee</a></li>
+           <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/employees" class="nav-link">Employee List</a></li>
+           <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/jasper" class="nav-link">Employee Jasper Report</a></li> 
+          <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" onclick="location.href='http://localhost:8080/swagger-ui.html'" class="nav-link">Swagger UI</a></li>
+        </ul>
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+            <li><a *ngIf="!hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+            <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Logout</a></li>
+         </ul>
+    </nav>
+</header>

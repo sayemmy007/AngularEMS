@@ -1,0 +1,37 @@
+<br>
+<div class="search-container">
+    <h4>Search:
+      <!-- //  <input type="text" >  -->
+    <input type="text" [(ngModel)]="firstName" (input)="Search()"/> </h4>
+</div>
+
+
+
+
+<div class="table-container" >
+<h2 style="text-align: left;">Employee List</h2>
+<table class="table table-striped " style="text-align: center;">
+    <thead>
+        <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Id</th>
+        <th>DOJ</th>
+        <th>Actions</th>
+     <tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let employee of employees">
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.doj | date:'dd/MM/yyyy'}}</td>
+            <td>
+                <button (click) = "updateEmployee(employee.id)" class = "btn btn-warning"> Update</button>
+                <button (click) = "deleteEmployee(employee.id)" class = "btn btn-danger"style="margin-left:10px">Delete</button>
+                <button (click) = "employeeDetails(employee.id)" class = "btn btn-info"style="margin-left:10px">View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
